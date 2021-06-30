@@ -3,6 +3,7 @@ from student import Students
 student = Students()
 
 
+# Add student to database if the student is not in the database yet
 def add_student():
     name = input("\nEnter student's name: ")
     age = int(input("Enter student's age: "))
@@ -13,6 +14,7 @@ def add_student():
         print(f"Student {name} already exists")
 
 
+# Delete student from database if the student is already in the database yet
 def delete_student():
     name = input("\nEnter student's name: ")
     answer = input(f"Are you sure you want to delete {name}? (Y/n")
@@ -27,6 +29,7 @@ def delete_student():
         print("Wrong input!")
 
 
+# Print list of students sorted by name
 def list_of_students():
     print(student)
 
