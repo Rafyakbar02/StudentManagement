@@ -5,8 +5,13 @@ student = Students()
 
 # Add student to database if the student is not in the database yet
 def add_student():
+    age = 0
     name = input("\nEnter student's name: ")
-    age = int(input("Enter student's age: "))
+    while age == 0:
+        try:
+            age = int(input("Enter student's age: "))
+        except ValueError:
+            print("Invalid input!\n")
     grade = input("Enter student's grade level: ")
     if student.add_student(name, age, grade):
         print(f"Student {name} has been added\n")
@@ -26,7 +31,7 @@ def delete_student():
     elif answer == "n":
         pass
     else:
-        print("Wrong input!\n")
+        print("Invalid input!\n")
 
 
 # Print list of students sorted by name
@@ -43,12 +48,15 @@ while choice != 4:
           "2 - Delete student\n"
           "3 - List of students\n"
           "4 - Quit")
-    choice = int(input("Enter a number: "))
-    if choice == 1:
-        add_student()
-    elif choice == 2:
-        delete_student()
-    elif choice == 3:
-        list_of_students()
-    else:
-        print("Goodbye!")
+    try:
+        choice = int(input("Enter a number: "))
+        if choice == 1:
+            add_student()
+        elif choice == 2:
+            delete_student()
+        elif choice == 3:
+            list_of_students()
+        else:
+            print("Goodbye!")
+    except ValueError:
+        print("Invalid input!\n")
