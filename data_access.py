@@ -1,5 +1,4 @@
 import json
-from json.decoder import JSONDecodeError
 
 
 # Open or create file called students.txt and return a dictionary whether it is filled or empty
