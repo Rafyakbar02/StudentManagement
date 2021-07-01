@@ -9,9 +9,9 @@ def add_student():
     age = int(input("Enter student's age: "))
     grade = input("Enter student's grade level: ")
     if student.add_student(name, age, grade):
-        print(f"Student {name} has been added")
+        print(f"Student {name} has been added\n")
     else:
-        print(f"Student {name} already exists")
+        print(f"Student {name} already exists\n")
 
 
 # Delete student from database if the student is already in the database yet
@@ -20,13 +20,13 @@ def delete_student():
     answer = input(f"Are you sure you want to delete {name}? (Y/n")
     if answer == "Y":
         if student.delete_student(name):
-            print(f"Student {name} has been deleted")
+            print(f"Student {name} has been deleted\n")
         else:
-            print(f"Student {name} not found")
+            print(f"Student {name} not found\n")
     elif answer == "n":
         pass
     else:
-        print("Wrong input!")
+        print("Wrong input!\n")
 
 
 # Print list of students sorted by name
@@ -38,7 +38,7 @@ choice = 0
 print("Welcome to Student Information Manager!")
 
 while choice != 4:
-    print("\nWhat can we help you with?\n"
+    print("What can we help you with?\n"
           "1 - Add student\n"
           "2 - Delete student\n"
           "3 - List of students\n"
