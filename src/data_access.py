@@ -2,7 +2,7 @@ import json
 
 
 # Open or create file called students.txt and return a dictionary whether it is filled or empty
-def open_file():
+def get_dict():
     d = {}
     try:
         with open("students.json", "r") as json_file:
@@ -13,6 +13,6 @@ def open_file():
 
 
 # Save dictionary to students.txt with json
-def save_file(data):
+def save_dict(data):
     with open("students.json", "w") as outfile:
         json.dump(data, outfile, sort_keys=True)
