@@ -15,4 +15,4 @@ def open_file():
 # Save dictionary to students.txt with json
 def save_file(data):
     with open("students.json", "w") as outfile:
-        json.dump(data, outfile)
+        json.dump(data, outfile, sort_keys=True)

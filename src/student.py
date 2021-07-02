@@ -7,7 +7,7 @@ class Students:
 
     # Create an ordered dictionary of students from a filled or empty .txt file
     def __init__(self):
-        self.students = OrderedDict(data_access.open_file())
+        self.students = {}
 
     # Add student to dictionary. Return True if the student is added and saved,
     # return False if the student already exists
@@ -34,6 +34,7 @@ class Students:
     # String representation of Students class
     def __str__(self):
         str = ""
+        self.students = data_access.open_file()
         if not self.students:
             return "No students yet in the database"
         for student in self.students:
