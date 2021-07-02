@@ -26,12 +26,13 @@ def delete_student(name):
 
 
 # Print all students with their information
-def print_students(self):
-    self.students = data_access.get_dict()
-    if not self.students:
+def print_students():
+    str = ''
+    students = data_access.get_dict()
+    if not students:
         return "No students yet in the database"
-    for student in self.students:
+    for student in students:
         str += f"Name: {student}, " \
-               f"Age: {self.students[student]['age']}, " \
-               f"Grade: {self.students[student]['grade']}\n"
-    return str
+               f"Age: {students[student]['age']}, " \
+               f"Grade: {students[student]['grade']}\n"
+    print(str)
