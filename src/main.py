@@ -1,6 +1,4 @@
-from student import Students
-
-student = Students()
+import student
 
 
 # Add student to database if the student is not in the database yet
