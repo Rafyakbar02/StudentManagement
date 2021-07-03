@@ -1,8 +1,7 @@
 import data_access
 
 
-# Add student to dictionary. Return True if the student is added and saved,
-# return False if the student already exists
+# Add student to dictionary
 def add_student(name, age, grade):
     students = data_access.get_dict()
     if name not in students:
@@ -13,8 +12,7 @@ def add_student(name, age, grade):
         return False
 
 
-# Delete student from dictionary. Return True if the student is removed and saved,
-# return False if the student is not in the dictionary
+# Delete student from dictionary
 def delete_student(name):
     students = data_access.get_dict()
     if name not in students:
@@ -23,6 +21,15 @@ def delete_student(name):
         del students[name]
         data_access.save_dict(students)
         return True
+
+
+# Search student by name from dictionary
+def search_student(name):
+    students = data_access.get_dict()
+    if name not in students:
+        print(f"Student {name} not found\n")
+    else:
+        print(f"Name: {name}, " f"Age: {students[name]['age']}, " f"Grade: {students[name]['grade']}\n")
 
 
 # Print all students with their information

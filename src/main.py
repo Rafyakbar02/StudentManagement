@@ -46,6 +46,16 @@ def delete_student():
             break
 
 
+def search_student():
+    while True:
+        name = input("\nEnter student's name: ")
+        student_list.search_student(name)
+        if repeat("search"):
+            continue
+        else:
+            break
+
+
 def repeat(process):
     while True:
         answer = input(f"Do you want to {process} another student? (Y/n) ")
