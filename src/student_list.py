@@ -43,6 +43,7 @@ def print_list():
     if not students:
         print("There's no student in the database")
     else:
+        print()
         for student in students:
-            print(student_info(student), students)
+            print(student_info(student, students))
         print()

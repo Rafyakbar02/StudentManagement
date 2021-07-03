@@ -1,3 +1,4 @@
+import sys
 import student_list
 
 
@@ -56,7 +57,7 @@ def repeat(process):
         if answer.upper() == 'Y':
             return True
         elif answer.upper() == 'N':
-            print('\n')
+            print()
             return False
         else:
             print("Invalid input!\n")
@@ -68,24 +69,20 @@ def list_of_students():
 
 
 choice = 0
-print("Welcome to Student Information Manager!")
+ui = {1: {'process': 'Add student', 'function': add_student},
+      2: {'process': 'Delete student', 'function': delete_student},
+      3: {'process': 'Search student', 'function': search_student},
+      4: {'process': 'List of students', 'function': list_of_students},
+      5: {'process': 'Quit', 'function': sys.exit}}
+
 while True:
-    print("What can we help you with?\n"
-          "1 - Add student\n"
-          "2 - Delete student\n"
-          "3 - List of students\n"
-          "4 - Quit")
+    print("Welcome to Student Information Manager!")
+    for menu in ui:
+        print(f"{menu} - {ui[menu]['process']}")
     try:
         choice = int(input("Enter a number: "))
-        if choice == 1:
-            add_student()
-        elif choice == 2:
-            delete_student()
-        elif choice == 3:
-            list_of_students()
-        elif choice == 4:
-            print("Goodbye!")
-            break
+        if choice in ui:
+            ui[choice]['function']()
         else:
             raise ValueError
     except ValueError:
