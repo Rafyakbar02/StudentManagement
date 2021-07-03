@@ -16,10 +16,7 @@ def add_student():
             except ValueError:
                 print("Invalid input!\n")
         grade = input("Enter student's grade level: ")
-        if student_list.add_student(name, age, grade):
-            print(f"Student {name} has been added\n")
-        else:
-            print(f"Student {name} already exists\n")
+        student_list.add_student(name, age, grade)
         if repeat("add"):
             continue
         else:
@@ -32,10 +29,7 @@ def delete_student():
         name = input("\nEnter student's name: ")
         answer = input(f"Are you sure you want to delete {name}? (Y/n) ")
         if answer == "Y":
-            if student_list.delete_student(name):
-                print(f"Student {name} has been deleted\n")
-            else:
-                print(f"Student {name} not found\n")
+            student_list.delete_student(name)
         elif answer == "n":
             pass
         else:
@@ -70,12 +64,11 @@ def repeat(process):
 
 # Print list of students sorted by name
 def list_of_students():
-    student_list.print_students()
+    student_list.print_list()
 
 
 choice = 0
 print("Welcome to Student Information Manager!")
-
 while True:
     print("What can we help you with?\n"
           "1 - Add student\n"
